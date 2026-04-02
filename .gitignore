@@ -1,3 +1,40 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Godot-specific ignores
+*.translation
+
+# Imported resources
+.import/
+
+# Export templates / builds
 /android/
+/build/
+/export/
+*.apk
+*.aab
+*.ipa
+*.exe
+*.x86_64
+*.x86
+*.pck
+
+# Mono-specific ignores (C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# OS-specific
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log

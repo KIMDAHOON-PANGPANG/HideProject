@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
+size = Vector2(24, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ladder"]
+size = Vector2(40, 48)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 10
+script = ExtResource("1_player")
+
+[node name="Visual" type="ColorRect" parent="."]
+z_index = 10
+offset_left = -12
+offset_top = -48
+offset_right = 12
+offset_bottom = 0
+color = Color(0.2, 0.55, 0.8, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_col")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 8.0
+target_desired_distance = 8.0
+
+[node name="LadderDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderDetector"]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_ladder")
+
+[node name="StaminaBg" type="ColorRect" parent="."]
+z_index = 20
+offset_left = -15
+offset_top = -56
+offset_right = 15
+offset_bottom = -52
+color = Color(0.15, 0.15, 0.15, 0.8)
+
+[node name="StaminaBar" type="ColorRect" parent="."]
+z_index = 21
+offset_left = -15
+offset_top = -56
+offset_right = 15
+offset_bottom = -52
+color = Color(0.2, 0.8, 0.3, 0.9)

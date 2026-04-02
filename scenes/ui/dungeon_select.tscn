@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/dungeon_select.gd" id="1_ds"]
+
+[node name="DungeonSelect" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_ds")
+
+[node name="BgDim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60
+offset_top = 30
+offset_right = -60
+offset_bottom = -30
+
+[node name="Title" type="Label" parent="Panel"]
+offset_left = 30
+offset_top = 16
+offset_right = 300
+offset_bottom = 46
+text = "야간 계획 — 던전 현황판"
+
+[node name="CloseButton" type="Button" parent="Panel"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80
+offset_top = 12
+offset_right = -16
+offset_bottom = 44
+text = "닫기"
+
+[node name="MapArea" type="Control" parent="Panel"]
+offset_left = 30
+offset_top = 56
+offset_right = 1130
+offset_bottom = 620

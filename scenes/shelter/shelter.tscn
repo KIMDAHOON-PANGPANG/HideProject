@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/shelter/shelter.gd" id="1_shelter"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/camera/game_camera.tscn" id="3_camera"]
+
+[node name="Shelter" type="Node2D"]
+script = ExtResource("1_shelter")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -20
+offset_left = -500
+offset_top = -300
+offset_right = 1400
+offset_bottom = 700
+color = Color(0.06, 0.06, 0.08, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.75, 0.70, 0.65, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(450, 388)
+
+[node name="GameCamera" parent="." instance=ExtResource("3_camera")]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_enemy"]
+[ext_resource type="Script" path="res://scenes/enemies/vision_cone.gd" id="2_vision"]
+
+[sub_resource type="RectangleShape2D" id="enemy_col"]
+size = Vector2(20, 44)
+
+[node name="Enemy" type="CharacterBody2D"]
+z_index = 8
+script = ExtResource("1_enemy")
+
+[node name="Visual" type="ColorRect" parent="."]
+z_index = 8
+offset_left = -10
+offset_top = -44
+offset_right = 10
+offset_bottom = 0
+color = Color(0.8, 0.2, 0.15, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("enemy_col")
+
+[node name="VisionCone" type="Node2D" parent="."]
+script = ExtResource("2_vision")
